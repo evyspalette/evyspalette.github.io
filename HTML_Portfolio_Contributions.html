@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Evy's Palette </title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link type="text/css" rel="stylesheet" href="CSS_Portfolio.css"/>
+  <link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css' />
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css' />
+
+  <script src="Script_Portfolio.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: grey;">
+<div id="AllContent">
+
+
+<!--Navigation-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div id="navdiv" class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+		<li><a href="HTML_Portfolio_Home.html"><span class="glyphicon glyphicon glyphicon-home"></span></a></li>
+		<li><a href="HTML_Portfolio_Blog.html">Blog</a></li>
+        <li><a href="HTML_Portfolio_Contributions.html">Contributions</a></li>		
+      </ul>
+     </div>
+   </div>
+</nav>
+
+<!--Contributions-->    
+<div id="contributionsdiv" class="container-fluid bodyContent">
+
+    <div class="row">
+      	<div class="col-md-5 slideContent" style="margin-left:50px;">
+			<h1 class="TabHeader" style="font-size: 42px;"> K-Mart @Magzter </h1><br/>
+			<img class="kmartSlides img-responsive" src="Images/K_Mart 1.jpg" style="width:100%">
+			<img class="kmartSlides img-responsive" src="Images/K_Mart 2.jpg" style="width:100%">
+			<div id="captionImage" class="kmartSlides slideCaption">
+				<p id="caption"><a target="_blank" href="https://www.magzter.com/IN/Prime-Academy-P-Ltd/Knowledge-Mart/Business/8617">Read full article</a></p>
+			</div>
+			<a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1,'kmartSlides')">&#10094;</a>
+			<a class="w3-btn-floating w3-display-right" onclick="plusDivs(1,'kmartSlides')">&#10095;</a><br/><br/>
+		</div>
+		<div class="col-md-1"></div>
+			<div class="col-md-5 slideContent">
+			<h1 class="TabHeader" style="font-size: 42px;">CAFM Problem Book </h1><br/>
+			<img class="mySlides img-responsive" src="Images/Prime Academy 1.jpg" style="width:100%">
+			<img class="mySlides img-responsive" src="Images/Prime Academy 2.jpg" style="width:100%">
+			
+			<a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1,'mySlides')">&#10094;</a>
+			<a class="w3-btn-floating w3-display-right" onclick="plusDivs(1,'mySlides')">&#10095;</a><br/><br/>
+			</div>
+      	
+   </div>
+</div> 
+	
+</div>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex,"mySlides");
+showDivs(slideIndex,"kmartSlides");
+
+function plusDivs(n,className) {
+  showDivs(slideIndex += n,className);
+}
+
+function showDivs(n,className) {
+  var i;
+  var x = document.getElementsByClassName(className);
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  if(x[slideIndex-1].id=="captionImage")
+		x[slideIndex-1].style.display = "table";  
+  else
+		x[slideIndex-1].style.display = "block";  
+}
+</script>
+</body>
+</html>
